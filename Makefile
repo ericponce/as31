@@ -19,6 +19,8 @@
 #			command line version returns non-zero on error
 
 
+TEST = tests
+
 #Use this CFLAGS line with gcc on linux
 CFLAGS=-O3 -Wall -DGTK_ENABLE_BROKEN
 CC=gcc
@@ -58,6 +60,25 @@ symbol.o: symbol.c as31.h parser.h
 lexer.o: lexer.c as31.h parser.h
 parser.o: parser.c as31.h
 run.o: run.c as31.h
+
+test:
+
+	@./as31 $(TEST)/paulmon1.asm > /dev/null
+	@./as31 $(TEST)/paulmon2.asm > /dev/null
+	@./as31 $(TEST)/extra.asm > /dev/null
+
+	@diff $(TEST)/paulmon1.hex $(TEST)/paulmon1.ref > $(TEST)/test1.tmp
+	@diff $(TEST)/paulmon2.hex $(TEST)/paulmon2.ref >> $(TEST)/test1.tmp
+	@diff $(TEST)/extra.hex $(TEST)/extra.ref >> $(TEST)/test1.tmp
+
+	@if [ -s $(TEST)/test1.tmp ] ; then \
+    echo FAILED ; \
+    else \
+    echo PASSED ; \
+    fi
+
+	@rm $(TEST)/*.hex
+	@rm $(TEST)/test1.tmp 
 
 clean:
 	rm -f as31 as31_gtk *~ *.o parser.c parser.h core
