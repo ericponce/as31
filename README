@@ -1,15 +1,17 @@
-This is a beta test release of AS31.
+# as31
+Adaptation of as31 by Paul Stoffregen for Mac OS X and modern versions of GTK+
 
-To build on Linux, just type "make".  To install, copy
-the binaries to a directory in your search path, such
-as /usr/local/bin.  It's that simple.  For other unix
-platforms, you may need to edit the Makefile.
+## Requirements
+GTK+2.0
+bison
+pkg-config
+
+It is recommended that you install all of this using [homebrew](http://brew.sh)
+
+## Installation
+Run `make`
 
 
-Please report any problems to
-
-paul@pjrc.com
-
-
-Thank you.  I hope you find AS31 useful.
+## Verification
+Run `make test`
 
