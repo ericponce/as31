@@ -22,6 +22,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define NOPE
 #include "as31.h"
@@ -1087,7 +1088,7 @@ void dumplist(char *txt, int show)
 {
 	int i,j;
 
-	fprintf(listing,show?"%04X: ":"      ",lc);
+	fprintf(listing,show?"%04lX: ":"      ",lc);
 
 	j=0;
 	for(i=0; i<bytecount; i++ ) {
