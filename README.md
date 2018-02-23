@@ -1,5 +1,5 @@
 # as31
-Adaptation of as31 by Paul Stoffregen for Mac OS X, modern versions of GTK+, and potentially linux (non gui)
+Adaptation of [as31 by Paul Stoffregen](https://www.pjrc.com/tech/8051/tools/as31-doc.html) for Mac OS X, modern versions of GTK+, and potentially linux (non gui)
 
 ## Requirements - Basic - Max OS X
 * CommandLineTools
