@@ -17,6 +17,8 @@
 #			  so that all warning are shown.
 #	March 2001	fix crash with srecord format
 #			command line version returns non-zero on error
+#   February 2018
+#			set default target to non-gui version
 
 
 TEST = tests
@@ -35,7 +37,7 @@ CC=gcc
 
 OBJ=run.o lexer.o parser.o symbol.o emitter.o
 
-all: as31 as31_gtk
+all: as31
 
 as31: $(OBJ) as31.o
 	@$(CC) $(CFLAGS) -o as31 $(OBJ) as31.o
