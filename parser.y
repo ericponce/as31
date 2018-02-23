@@ -1017,17 +1017,13 @@ int makeop(struct opcode * op, struct mode *m, int add)
  *
  */
 
-/* #define indx(a) ( (a)/(sizeof(long)*8) )
-#define bit(a)	( 1 << ((a)%(sizeof(long)*8)) ) */
-
-#define indx(a) ( (a)/(32) )
-#define bit(a)	( 1 << ((a)%(32)) )
+#define indx(a) (a / 8)
+#define bit(a)	(1 << (a % 8))
 
 #define getloc(a) (regions[indx(a)] & bit(a))
 #define setloc(a) (regions[indx(a)] |= bit(a))
 
-// static unsigned long regions[ 0x10000/(sizeof(long)*8) ];
-static unsigned long regions[ 0x10000/(32) ];
+static unsigned long regions[0x10000 / 8];
 
 void inclc(int i)
 {
