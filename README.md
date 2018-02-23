@@ -34,3 +34,7 @@ It is recommended to install all of this using [apt](https://help.ubuntu.com/com
 ## Verification
 Run `make test`
 
+## Sources
+ * [as31 for Linux Based Systems by Paul Stoffregen](https://www.pjrc.com/tech/8051/tools/linux_compile.html)
+ * [Bug #655487](https://www.mail-archive.com/debian-bugs-closed@lists.debian.org/msg350992.html)
+
